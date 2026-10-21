@@ -1,0 +1,28 @@
+// ============================================================
+// build.gradle (Project level) - ترید یار با درگاه مایکت
+// ============================================================
+// طبق داکیومنت مایکت:
+// "در فایل build.gradle موجود در پوشه‌ اصلی پروژه خود Jitpack Repository را اضافه کنید"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Jitpack Repository برای کتابخانه مایکت
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
